@@ -351,7 +351,7 @@ $(document).ready(function() {
         .delay(300)
         .addClass('show')
         .queue(function() {
-          $(this).css('willChange', 'auto');
+          $(this).css('willChange', 'unset');
           $(this).dequeue();
         });
       }
@@ -367,13 +367,13 @@ $(document).ready(function() {
   $('.totop').on('click', function(e) {
     e.preventDefault();
     $(this).addClass('totop-animation');
-    $('html, body').css('will-change', 'scroll-position')
+    $('html, body').css('willChange', 'scroll-position')
       .stop().delay(600).animate({
         scrollTop: 0
       }, 300)
       .delay(300)
       .queue(function() {
-        $(this).css('will-change', 'auto').dequeue();
+        $(this).css('willChange', 'unset').dequeue();
       });
   });
   $('.totop').on('animationend', function() {
