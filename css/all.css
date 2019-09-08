@@ -6873,7 +6873,7 @@ section {
       display: none; } }
 
 #profile .skill-box-wrap {
-  display: block;
+  display: inline-block;
   cursor: pointer; }
   #profile .skill-box-wrap.hex-placement .hexbox {
     background-color: transparent;
