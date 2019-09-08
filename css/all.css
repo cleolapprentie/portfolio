@@ -7101,7 +7101,7 @@ section {
   .skillbar.active .skillbar-rate > div {
     background-color: #4b626d; }
 
-/* Portofolio                                              */
+/* portfolio                                              */
 .hex-row {
   width: 90%;
   margin: 0 auto; }
@@ -7117,13 +7117,13 @@ section {
     margin-bottom: 0;
     font-size: 1.3rem; }
 
-.portofolio-present {
+.portfolio-present {
   padding: 3rem 1.5rem 2.5rem 1.5rem;
   background-color: #cfd8dc; }
   @media only screen and (max-width: 767px) {
-    .portofolio-present {
+    .portfolio-present {
       padding: 1rem 0; } }
-  .portofolio-present .present-panel {
+  .portfolio-present .present-panel {
     position: absolute;
     top: 0;
     left: 0;
@@ -7133,7 +7133,7 @@ section {
     -ms-transform: translateX(-100%);
         transform: translateX(-100%);
     transition: all 0.3s ease; }
-    .portofolio-present .present-panel.show {
+    .portfolio-present .present-panel.show {
       position: relative;
       top: 0;
       left: 0;

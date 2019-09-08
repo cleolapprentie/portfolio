@@ -334,14 +334,14 @@ $(document).ready(function() {
   });
 
   // -------------------------------//
-  // Portofolio                     //
+  // portfolio                     //
   // -------------------------------//
 
-  $('#portofolio .more').on('click', function(e) {
+  $('#portfolio .more').on('click', function(e) {
     var target = $(e.target).data('target');
     if (mobileCheck()) {
       $('html, body').stop().animate({
-        scrollTop: $('.portofolio-present').offset().top - 55
+        scrollTop: $('.portfolio-present').offset().top - 55
       });
     }
     $('.present-panel').removeClass('show');
@@ -359,7 +359,7 @@ $(document).ready(function() {
   });
   $('.back-to-porto').on('click', function() {
     $('html, body').stop().animate({
-      scrollTop: $('#portofolio').offset().top
+      scrollTop: $('#portfolio').offset().top
     });
   });
   
