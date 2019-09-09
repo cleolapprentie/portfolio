@@ -6886,6 +6886,7 @@ section {
     transition: all 0.2s linear; }
     #profile .skill-box-wrap .hexbox::after, #profile .skill-box-wrap .hexbox::before {
       background-color: inherit; }
+#profile .hexbox svg { pointer-events: none; }
 
 #profile .skill-box-wrap:nth-child(2n) {
   float: right;
