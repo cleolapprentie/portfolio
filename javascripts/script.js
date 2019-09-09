@@ -235,7 +235,7 @@ $(document).ready(function() {
         .queue(function() {
           $('html, body').stop().animate({
             scrollTop: $('.main').offset().top
-          }, 250);
+          });
           $(this).dequeue();
         })
         .delay(250)
@@ -279,6 +279,13 @@ $(document).ready(function() {
   // -------------------------------//
   var randomBefore = 0,
       setTextSlider = startInterval(8, textSlider);
+  // Internet Explorer 6-11
+  var isIE = /*@cc_on!@*/false || !!document.documentMode;
+  // Edge 20+
+  var isEdge = !isIE && !!window.StyleMedia;
+  if (isIE || isEdge) {
+    $('.photo-wrap').css('margin-right', '30px');
+  }
 
   $('#profile .hexbox').on('mouseenter', showText);
   $('#profile .hexbox').on('mouseleave', function() {
@@ -384,7 +391,7 @@ $(document).ready(function() {
     $('html, body').css('willChange', 'scroll-position')
       .stop().delay(600).animate({
         scrollTop: 0
-      }, 300)
+      }, 400)
       .delay(300)
       .queue(function() {
         $(this).css('willChange', 'unset').dequeue();
