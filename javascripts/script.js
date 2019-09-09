@@ -86,7 +86,6 @@ $(document).ready(function() {
   setInterval(function() {
     var random = Math.floor(Math.random() * 15),
         target = $('.hero-primary').children().eq(random);
-    console.log(random)
     target.addClass('rubberBand')
       .delay(1000)
       .queue(function() {
