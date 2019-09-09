@@ -41,6 +41,15 @@ $(document).ready(function() {
       menuShow = false;
     }
   });
+
+  $('body').on('click', function(e) {
+    e.stopPropagation();
+    if ($(e.target).is('.menu-trigger')) { return }
+    if (menuShow) {
+      $('.nav-menu').addClass('menu-close').removeClass('menu-open');
+      menuShow = false;
+    }
+  })
   
   // -------------------------------//
   // Hero text animation            //
@@ -168,6 +177,11 @@ $(document).ready(function() {
             $subtitle.css('opacity', '1').addClass('fadeInDown animated');
             $(this).dequeue();
           });
+      }
+
+      if (menuShow) {
+        $('.nav-menu').addClass('menu-close').removeClass('menu-open');
+        menuShow = false;
       }
     });
 
