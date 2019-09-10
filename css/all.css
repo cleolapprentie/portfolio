@@ -7275,6 +7275,13 @@ body.loading {
   -webkit-animation-timing-function: ease-in;
   animation-timing-function: ease-in; }
 
+@media only screen and (max-width: 991px) {
+  .down {
+    margin-bottom: 2rem;
+  }
+}
+
+
 /* --------------------------------------------------------*/
 /* Main                                                    */
 /* --------------------------------------------------------*/
