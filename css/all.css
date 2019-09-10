@@ -6753,7 +6753,8 @@ section {
 .wp {
   opacity: 0;
   animation-duration: 0.8s;
-  animation-fill-mode: both; }
+  animation-fill-mode: both;
+  z-index: 0; }
 
 .popup {
   animation-name: popup;
