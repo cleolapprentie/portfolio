@@ -7317,6 +7317,7 @@ section {
   animation-duration: 0.8s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+  -webkit-backface-visibility: hidden;
   z-index: 0; }
 
 .popup {
