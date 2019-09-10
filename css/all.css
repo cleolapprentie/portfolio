@@ -7254,7 +7254,7 @@ body.loading {
   .scrolldown:hover {
     padding-bottom: 0.5rem; }
 
-    @media only screen and (max-width: 991px) {
+    @media only screen and (max-width: 1024px) {
       .scrolldown  {
         top: 3%;
       }
