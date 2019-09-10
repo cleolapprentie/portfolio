@@ -7777,10 +7777,10 @@ section {
   cursor: pointer;
   z-index: 1; }
   .skillbar-title {
-    -ms-flex: 0 0 16%;
+    -ms-flex: 0 0 18%;
         -webkit-box-flex: 0;
-        flex: 0 0 16%;
-    min-width: 80px;
+        flex: 0 0 18%;
+    min-width: 85px;
     padding: 0.15rem 0;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 600;

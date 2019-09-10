@@ -1,15 +1,18 @@
 $(document).ready(function() {
   // load
-  setTimeout(function() {
-    $('.loading-progress').find('.fill').addClass('complete');
-    $('body').removeClass('loading');
-    $('.loading-overlay')
-      .delay(300)
-      .queue(function() {
-        heroAnimation();
-        $(this).addClass('off').dequeue();
-      });
-  }, 2000);
+  $(window).on('load', function() {
+    setTimeout(function() {
+      $('.loading-progress').find('.fill').addClass('complete');
+      $('body').removeClass('loading');
+      $('.loading-overlay')
+        .delay(300)
+        .queue(function() {
+          heroAnimation();
+          $(this).addClass('off').dequeue();
+        });
+    }, 1000);
+  });
+  
 
   // Mobile Hover
   var mobileHover = (function() {
