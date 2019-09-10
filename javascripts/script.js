@@ -15,13 +15,13 @@ $(document).ready(function() {
   
 
   // Mobile Hover
-  var mobileHover = (function() {
-    $('*').on('touchstart', function () {
-        $(this).trigger('hover');
-    }).on('touchend', function () {
-        $(this).trigger('hover');
-    });
-  })();
+  // var mobileHover = (function() {
+  //   $('*').on('touchstart', function () {
+  //       $(this).trigger('hover');
+  //   }).on('touchend', function () {
+  //       $(this).trigger('hover');
+  //   });
+  // })();
 
   var viewport = window.innerWidth;
       // mousedown = false;
