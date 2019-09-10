@@ -11,7 +11,20 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Ubuntu:400,500|Fredericka+the+Great&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/all.css">
   </head>
-  <body ontouchstart>
+  <body class="loading" ontouchstart>
+    <!-- Loader -->
+    <div class="loading-overlay">
+      <div class="loading-inner container">
+        <div class="position-relative overflow-hidden">
+          <p>Hello, welcome to my page. <span class="d-block d-md-inline-block">I'm Cleo.</span></p>
+          <div class="loading-progress">
+            <span class="fill"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Menu Overlay -->
+    <div class="menu-overlay"></div>
     <!-- Hero -->
     <header class="hero position-relative">
       <div class="container d-flex flex-column justify-content-between align-items-center position-relative">
@@ -139,7 +152,7 @@
               我對前端有高度的熱情與學習欲望，目前全職投入學習中。此外也會接觸一些UI/UX的網站或文章，培養設計思維，立志要成為兼具設計思維與開發能力的前端工程師！目前正積極投入 JavaScript 及 Vue.js 的學習。
             </p>
             <p>
-              我畢業後在一家日商公司擔任業務助理，後來發現一陳不變的辦公室生活不是我想要的，我想過的每天不斷挑戰的日子，開啟了我的轉職之路。
+              我畢業後在一家日商公司擔任業務助理，後來發現一陳不變的辦公室生活不是我想要的，我想過的是每天不斷挑戰的日子，因此開啟了我的轉職之路。
               在這將近四個月的自學過程中，我找回了夢想，傾盡所有投入前端的懷抱。
             </p>
             <p>
@@ -460,7 +473,7 @@
                 </div>
                 <div class="col-md-7 mt-4 mt-md-0 pl-4">
                   <h3 class="h1">個人設計名片</h3>
-                  <a href="#" class="btn btn-outline-dark btn-sm mb-3" role="button">Demo</a>
+                  <a href="https://codepen.io/cleosyuu/full/MNJbKz" class="btn btn-outline-dark btn-sm mb-3" role="button" target="_blank">Demo</a>
                   <p>
                     網頁切版的第一步<br>
                     先做出一張屬於自己的名片吧<br>
@@ -487,8 +500,8 @@
                 <div class="col-md-7 mt-4 mt-md-0 pl-4">
                   <h3 class="f-ubuntu h1">To Do List</h3>
                   <div class="btn-group btn-group-sm mb-3" role="group" aria-label="">
-                    <a href="#" class="btn btn-outline-dark" role="button">Demo</a>
-                    <a href="#" class="btn btn-outline-dark" role="button">GitHub</a>
+                    <a href="https://kayahino.github.io/todolist/" class="btn btn-outline-dark" role="button" target="_blank">Demo</a>
+                    <a href="https://github.com/kayahino/todolist" class="btn btn-outline-dark" role="button" target="_blank">GitHub</a>
                   </div>
                   <p>
                     這是我接觸 JavaScript 後第一個做出來的作品<br>
@@ -522,8 +535,8 @@
                 <div class="col-md-7 mt-4 mt-md-0 pl-4">
                   <h3 class="f-ubuntu h1">BMI Calculator</h3>
                   <div class="btn-group btn-group-sm mb-3" role="group" aria-label="">
-                    <a href="#" class="btn btn-outline-dark" role="button">Demo</a>
-                    <a href="#" class="btn btn-outline-dark" role="button">GitHub</a>
+                    <a href="https://kayahino.github.io/hexschool-hw/BMI/" class="btn btn-outline-dark" role="button">Demo</a>
+                    <a href="https://github.com/kayahino/hexschool-hw/tree/master/BMI" class="btn btn-outline-dark" role="button">GitHub</a>
                   </div>
                   <p>
                     六角學院 JS 最終作業之一<br>
@@ -554,6 +567,14 @@
                       <div class="carousel-item bg-cover h-100" style="background-image: url(images//hextaurant-2.png)"></div>
                       <div class="carousel-item bg-cover h-100" style="background-image: url(images//hextaurant-3.png)"></div>
                     </div>
+                    <a class="carousel-control-prev" href="#hextaurant-show" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#hextaurant-show" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
                   </div>
                   <!-- content -->
                   <div class="tag-wrap">
@@ -568,8 +589,8 @@
                 <div class="col-md-7 mt-4 mt-md-0 pl-4">
                   <h3 class="f-ubuntu h1">Hextaurant</h3>
                   <div class="btn-group btn-group-sm mb-3" role="group" aria-label="">
-                    <a href="#" class="btn btn-outline-dark" role="button">Demo</a>
-                    <a href="#" class="btn btn-outline-dark" role="button">GitHub</a>
+                    <a href="https://kayahino.github.io/hextaurant/" class="btn btn-outline-dark" role="button">Demo</a>
+                    <a href="https://github.com/kayahino/hextaurant" class="btn btn-outline-dark" role="button">GitHub</a>
                   </div>
                   <p>
                     六角學院 RWD 最終作業<br>

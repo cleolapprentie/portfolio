@@ -1,4 +1,28 @@
 $(document).ready(function() {
+
+  $(window).on('load', function() {
+    setTimeout(function() {
+      $('.loading-progress').find('.fill').addClass('complete');
+      $('body').removeClass('loading');
+      $('.loading-overlay')
+        .delay(200)
+        .addClass('off')
+        .delay(500)
+        .queue(function() {
+          heroAnimation();
+          $(this).dequeue();
+        })
+    }, 3000);
+  });
+  // Mobile Hover
+  var mobileHover = (function() {
+    $('*').on('touchstart', function () {
+        $(this).trigger('hover');
+    }).on('touchend', function () {
+        $(this).trigger('hover');
+    });
+  })();
+
   var viewport = window.innerWidth;
       // mousedown = false;
   // $('html, body').stop().animate({
@@ -12,86 +36,98 @@ $(document).ready(function() {
     });
   }
 
-  // typing animation
-  new TypeIt('.hero-sub-text',{
-    // what to type
-    strings: [
-      '$(Me).ready(function() {',
-      '&nbsp;&nbsp;&nbsp;&nbsp; var goal = function(effort) {',
-      '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var result = (effort > 99) ? \'前端工程師\' : \'Try Harder!\';',
-      '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return result;',
-      '&nbsp;&nbsp;&nbsp;&nbsp; }',
-      '&nbsp;&nbsp;&nbsp;&nbsp; goal(100);',
-      '}); '
-    ],
-    nextStringDelay: 500
-  })
-  .options({speed: 100, deleteSpeed: 75})
-  .go();
-
   // Menu Trigger 
   var menuShow = false;
   $('.menu-trigger').on('click', function(e) {
     var  $menu = $('.nav-menu');
     if (!menuShow) {
       $menu.addClass('menu-open').removeClass('menu-close');
+      $('.menu-overlay').css('display', 'block');
       menuShow = true;
     } else {
       $menu.addClass('menu-close').removeClass('menu-open');
+      setTimeout(function() {
+        $('.menu-overlay')[0].style = '';
+      }, 280);
       menuShow = false;
     }
   });
 
-  $('body').on('click', function(e) {
+  $('.menu-overlay').on('click', function(e) {
     e.stopPropagation();
-    if ($(e.target).is('.menu-trigger')) { return }
-    if (menuShow) {
-      $('.nav-menu').addClass('menu-close').removeClass('menu-open');
-      menuShow = false;
-    }
+    $('.nav-menu').addClass('menu-close').removeClass('menu-open');
+    setTimeout(function() {
+      $('.menu-overlay')[0].style = '';
+    }, 280);
+    menuShow = false;
   })
   
   // -------------------------------//
   // Hero text animation            //
   // -------------------------------//
-  heroTextAnimation();
-  function heroTextAnimation() {
-    for (var i = 0; i < 16; i++) {
-      (function(i) {
-        setTimeout(function() {
-          if (i === 10) {
-            $('.hero-primary').children().eq(i).addClass('animated rollIn');
-          } else {
-            $('.hero-primary').children().eq(i).addClass('animated bounceIn');
-          }
-        }, 100 * i)
-      })(i);
-    }
+  // heroTextAnimation();
+  var heroAnimation = function () {
     setTimeout(function() {
-      $('.hero-primary').children().each(function() {
-        $(this).removeClass('bounceIn rollIn').css('opacity', '1');
-      });
-    }, 2400);
-  }
-  
-  $('.hero-primary').children().on('mouseenter', function(e) {
-    $(e.target).addClass('rubberBand');
-  });
-  $('.hero-primary').children().on('mouseleave', function(e) {
-    setTimeout(function() {
-      $(e.target).removeClass('rubberBand');
-    }, 1000)
-  });
+      $('.loading-overlay').hide();
+    }, 800);
+    // typing animation
+    new TypeIt('.hero-sub-text', {
+        // what to type
+        strings: [
+          '$(Me).ready(function() {',
+          '&nbsp;&nbsp;&nbsp;&nbsp; var goal = function(effort) {',
+          '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var result = (effort > 99) ? \'前端工程師\' : \'Try Harder!\';',
+          '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return result;',
+          '&nbsp;&nbsp;&nbsp;&nbsp; }',
+          '&nbsp;&nbsp;&nbsp;&nbsp; goal(100);',
+          '}); '
+        ],
+        nextStringDelay: 500
+      })
+      .options({
+        speed: 100,
+        deleteSpeed: 75
+      })
+      .go();
 
-  setInterval(function() {
-    var random = Math.floor(Math.random() * 15),
+    var heroTextAnimation = (function() {
+      for (var i = 0; i < 16; i++) {
+        (function (i) {
+          setTimeout(function () {
+            if (i === 10) {
+              $('.hero-primary').children().eq(i).addClass('animated rollIn');
+            } else {
+              $('.hero-primary').children().eq(i).addClass('animated bounceIn');
+            }
+          }, 100 * i)
+        })(i);
+      }
+      setTimeout(function () {
+        $('.hero-primary').children().each(function () {
+          $(this).removeClass('bounceIn rollIn').css('opacity', '1');
+        });
+      }, 2400);
+    })();
+
+    $('.hero-primary').children().on('mouseenter', function (e) {
+      $(e.target).addClass('rubberBand');
+    });
+    $('.hero-primary').children().on('mouseleave', function (e) {
+      setTimeout(function () {
+        $(e.target).removeClass('rubberBand');
+      }, 1000)
+    });
+
+    setInterval(function () {
+      var random = Math.floor(Math.random() * 15),
         target = $('.hero-primary').children().eq(random);
-    target.addClass('rubberBand')
-      .delay(1000)
-      .queue(function() {
-        $('.hero-primary').children().removeClass('rubberBand').dequeue();
-      });
-  }, 5000);
+      target.addClass('rubberBand')
+        .delay(1000)
+        .queue(function () {
+          $('.hero-primary').children().removeClass('rubberBand').dequeue();
+        });
+    }, 5000);
+  }
   // -------------------------------//
   // Page scroll event              //
   // -------------------------------//
@@ -128,15 +164,11 @@ $(document).ready(function() {
         $navLink = $('.navigation a[href^="#"]');
 
     if (scroll === 0) {
-      $('.hero-primary').children().each(function() {
-        $(this).css('opacity', '0');
-      });
       if (!mobileCheck()) {
         $('body').addClass('stop-scrolling').css('margin-right', '');
         document.addEventListener('mousewheel', scrollDown, { passive: false });
         document.addEventListener('DOMMouseScroll', scrollDown, { passive: false });
       }
-      heroTextAnimation();
       $('.navigation').addClass('hide');
     } else if (scroll >= main - 1) {
       $('.navigation').removeClass('hide')
@@ -177,11 +209,6 @@ $(document).ready(function() {
             $(this).dequeue();
           });
       }
-
-      if (menuShow) {
-        $('.nav-menu').addClass('menu-close').removeClass('menu-open');
-        menuShow = false;
-      }
     });
 
     // section animation
@@ -205,6 +232,22 @@ $(document).ready(function() {
         $(this).find('div').css('width', rate + '%').dequeue();
       }
     });
+
+    
+    if (menuShow) {
+      $('.nav-menu').addClass('menu-close').removeClass('menu-open');
+      setTimeout(function() {
+        $('.menu-overlay')[0].style = '';
+      }, 280);
+      menuShow = false;
+    }
+
+
+
+
+
+
+
   });
   // Scroll down icon click event
   $('.scrolldown').on('click', scrollDown);
@@ -215,7 +258,7 @@ $(document).ready(function() {
     if ($target.length) {
       $('html, body').stop().animate({
         scrollTop: $target.offset().top - 50
-      }, 400);
+      }, 600);
     }
   });
 
@@ -399,5 +442,16 @@ $(document).ready(function() {
   $('.totop').on('animationend', function() {
     $('.totop').removeClass('totop-animation');
   });
+
+  $('.carousel-indicators').on('click', function(e) { console.log(e.target) })
+
+
+
+
+
+
+
+
+
 });
 

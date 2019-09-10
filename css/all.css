@@ -6513,10 +6513,88 @@ img {
 
 .f-ubuntu {
   font-family: 'Ubuntu', sans-serif; }
+/* --------------------------------------------------------*/
+/* Loader                                                    */
+/* --------------------------------------------------------*/
+body.loading {
+  overflow: hidden;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #263238;
+  transition: transform 0.6s linear 0.1s;
+  z-index: 999;
+}
+.loading-overlay.off {
+  transform: translateY(100%);
+}
+.loading-overlay.off .loading-inner{
+  transform: translateY(100%);
+}
+
+.loading-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: #335464;
+  transition: transform 0.8s linear;
+}
+
+.loading-progress {
+  height: 5px;
+  background-color: #eee;
+}
+.fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #26c6da;
+  animation: loading 10s linear;
+}
+
+.complete {
+  animation-name: none;
+}
+
+@keyframes loading {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 
 /* --------------------------------------------------------*/
 /* Hero                                                    */
 /* --------------------------------------------------------*/
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
 .hero {
   width: 100vw;
   height: 100vh;
