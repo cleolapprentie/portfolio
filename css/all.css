@@ -6566,7 +6566,7 @@ body.loading {
   width: 100%;
   height: 5px;
   background-color: #26c6da;
-  animation: loading 10s linear;
+  animation: loading 5s linear;
 }
 
 .complete {
