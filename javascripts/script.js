@@ -210,7 +210,7 @@ $(document).ready(function() {
 
     // section animation
     $('.wp').each(function() {
-      var animationName = $(this).data('animation'),
+      var animationName = $(this).data('animation') || 'none',
           animationDelay = $(this).data('delay') ? $(this).data('delay') : '0s',
           targetPos = $(this).offset().top,
           targetHeight = $(this).height();
