@@ -7254,6 +7254,12 @@ body.loading {
   .scrolldown:hover {
     padding-bottom: 0.5rem; }
 
+    @media only screen and (max-width: 991px) {
+      .scrolldown  {
+        top: 3%;
+      }
+    }
+
 .mousedown {
   width: 30px;
   height: 50px;
@@ -7263,7 +7269,7 @@ body.loading {
 
 .down {
   color: rgba(255, 255, 255, 0.8);
-  z-index: 1;
+  /* z-index: 1; */
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-iteration-count: infinite;
@@ -7274,12 +7280,6 @@ body.loading {
   animation-fill-mode: both;
   -webkit-animation-timing-function: ease-in;
   animation-timing-function: ease-in; }
-
-@media only screen and (max-width: 991px) {
-  .down {
-    margin-bottom: 2rem;
-  }
-}
 
 
 /* --------------------------------------------------------*/
