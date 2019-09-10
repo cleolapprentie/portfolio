@@ -5,14 +5,12 @@ $(document).ready(function() {
       $('.loading-progress').find('.fill').addClass('complete');
       $('body').removeClass('loading');
       $('.loading-overlay')
-        .delay(200)
-        .addClass('off')
-        .delay(500)
+        .delay(300)
         .queue(function() {
           heroAnimation();
-          $(this).dequeue();
-        })
-    }, 3000);
+          $(this).addClass('off').dequeue();
+        });
+    }, 1500);
   });
   // Mobile Hover
   var mobileHover = (function() {
