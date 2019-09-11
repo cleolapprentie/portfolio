@@ -9,7 +9,7 @@ $(document).ready(function() {
         heroAnimation();
         $(this).addClass('off').dequeue();
       });
-  }, 1000);
+  }, 2000);
   
 
   // Mobile Hover
