@@ -7411,14 +7411,14 @@ section {
         z-index: -2; } }
     @media only screen and (max-width: 767px) {
       .navigation .nav-menu.menu-open {
-        -webkit-animation: menuOpen 0.25s ease-out;
-        animation: menuOpen 0.25s ease-out;
+        -webkit-animation: menuOpen 0.3s ease-out;
+        animation: menuOpen 0.3s ease-out;
         -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards; } }
     @media only screen and (max-width: 767px) {
       .navigation .nav-menu.menu-close {
-        -webkit-animation: menuClose 0.3s ease-out;
-        animation: menuClose 0.3s ease-out;
+        -webkit-animation: menuClose 0.45s ease-in;
+        animation: menuClose 0.45s ease-in;
         -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards; } }
     .navigation .nav-menu li {

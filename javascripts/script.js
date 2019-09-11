@@ -174,7 +174,7 @@ $(document).ready(function() {
           $(this).css('willChange', 'unset').dequeue();
         });
     }
-
+    // now position
     $navLink.each(function() {
       if (!$(this.hash).length) { return }
       var targetPos = $(this.hash).offset().top,
