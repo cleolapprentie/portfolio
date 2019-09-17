@@ -354,23 +354,6 @@
             <p class="subtitle">Good, better, best. Never let it rest</p>
           </header>
           <div class="hex-row portfolio-wall">
-            
-            <div class="hex-wrap">
-              <div class="hex-content-shape">
-                <div class="hex-content-wrap bg-cover" style="background-image: url('images/namecard_thumb.png')">
-                  <div class="hex-content separate">
-                    <div class="hex-content__header d-block d-sm-none d-lg-block text-center">
-                      <h3></h3>
-                      <p class="mb-0">個人名片實作</p>
-                    </div>
-                    <button type="button" class="btn btn-outline-dark btn-sm mt-2 hex-content__footer more"
-                      data-target="#namecard">Learn More</button>
-                  </div>
-                </div>
-              </div>
-              <div class="hex">
-              </div>
-            </div>
             <div class="hex-wrap">
               <div class="hex-content-shape">
                 <div class="hex-content-wrap bg-cover" style="background-image: url('images//todolist_thumb.png')">
@@ -451,6 +434,22 @@
               <div class="hex">
               </div>
             </div>
+            <div class="hex-wrap">
+              <div class="hex-content-shape">
+                <div class="hex-content-wrap bg-cover" style="background-image: url('https://i.imgur.com/lxfxYrs.png')">
+                  <div class="hex-content separate">
+                    <div class="hex-content__header d-block d-sm-none d-lg-block text-center">
+                      <h3>#VueJS 實作</h3>
+                      <p class="mb-0">GitHub API 練習</p>
+                    </div>
+                    <button type="button" class="btn btn-outline-dark btn-sm mt-2 hex-content__footer more"
+                      data-target="#repos-finder">Learn More</button>
+                  </div>
+                </div>
+              </div>
+              <div class="hex">
+              </div>
+            </div>
 
 
           </div>
@@ -458,32 +457,6 @@
         <!-- Showcase -->
         <div class="portfolio-present overflow-hidden mt-6">
           <div class="container position-relative overflow-hidden wp" data-animation="fadeInUp">
-            <!-- Name Card -->
-            <div class="present-panel show" id="namecard">
-              <div class="row">
-                <div class="col-md-5 d-flex flex-column justify-content-center">
-                  <div class="portfolio-present__img"><img src="images//namecard.gif" alt="個人名片預覽"></div>
-                  <div class="tag-wrap">
-                    <span class="badge badge-dark tag">HTML</span>
-                    <span class="badge badge-dark tag">CSS</span>
-                    <span class="badge badge-dark tag">CSS Animation</span>
-                  </div>
-                </div>
-                <div class="col-md-7 mt-4 mt-md-0 pl-4">
-                  <h3 class="h1">個人設計名片</h3>
-                  <a href="https://codepen.io/cleosyuu/full/MNJbKz" class="btn btn-outline-dark btn-sm mb-3" role="button" target="_blank">Demo</a>
-                  <p>
-                    網頁切版的第一步<br>
-                    先做出一張屬於自己的名片吧<br>
-                    主要練習 <span class="badge badge-light">@keyframes</span> 製作動畫效果
-                  </p>
-                  學習成果：
-                  <ul class="list-unstyled custom-bullet">
-                    <li>CSS3 關鍵幀做出動畫效果</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
             <!-- To Do List -->
             <div class="present-panel" id="todolist">
               <div class="row">
@@ -709,6 +682,39 @@
                     <li>動態生成地址下拉式清單</li>
                     <li>修改表單驗證 API</li>
                     <li>JSON Server 製作模擬 API</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Repo Finder -->
+            <div class="present-panel show" id="repos-finder">
+              <div class="row">
+                <div class="col-md-5 d-flex flex-column justify-content-center">
+                  <div class="portfolio-present__img"><img src="https://i.imgur.com/lxfxYrs.png" alt="Repos Finder 預覽"></div>
+                  <div class="tag-wrap">
+                    <span class="badge badge-dark tag">Vue.js</span>
+                    <span class="badge badge-dark tag">JavaScript</span>
+                    <span class="badge badge-dark tag">HTML</span>
+                    <span class="badge badge-dark tag">CSS</span>
+                    <span class="badge badge-dark tag">Responsive</span>
+                  </div>
+                </div>
+                <div class="col-md-7 mt-4 mt-md-0 pl-4">
+                  <h3 class="f-ubuntu h1">GitHub Repos Finder</h3>
+                  <div class="btn-group btn-group-sm mb-3" role="group" aria-label="">
+                    <a href="https://kayahino.github.io/my_repos/public/" class="btn btn-outline-dark" role="button">Demo</a>
+                    <a href="https://github.com/kayahino/my_repos/" class="btn btn-outline-dark" role="button">GitHub</a>
+                  </div>
+                  <p>
+                    利用 <span class="badge badge-light">Vue.js</span> 的第一個作品<br>
+                    輸入 GitHub 使用者名稱可以查詢該使用者的所有 repo<br>
+                    捲軸往下滾可以持續載入未顯示的 repo<br>
+                    <small>*為了練習無限滾動而限制一次顯示5筆，每次載入5筆</small>
+                  </p>
+                  學習成果：
+                  <ul class="list-unstyled custom-bullet">
+                    <li>VueJS 的開發</li>
+                    <li>無插件實現無限滾動及視差滾動</li>
                   </ul>
                 </div>
               </div>
